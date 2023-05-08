@@ -1,0 +1,10 @@
+.newTask {
+    text-align: center;
+    background-color: ivory;
+    color: gray;
+}
+
+.button {
+    color: black;
+    border-radius: 20px;
+}

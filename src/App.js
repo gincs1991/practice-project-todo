@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+
+import { useState } from "react"; 
+import Task from "./components/Task";
+import Header from "./components/Header";
+import NewTaskForm from "./components/NewTaskForm";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [tasks, setTasks] = useState("")
+
+  const addTaskHandler = (task) => {
+    setTasks({task, ...tasks});
+  }
+
+  return <>
+    <Header />
+    <NewTaskForm onAddTask={addTaskHandler}/>
+    <Task />
+   </>;
 }
 
 export default App;
