@@ -23,10 +23,11 @@ const NewTaskForm = (props) => {
 
      const submitHandler = (event) => {
         event.preventDefault();
+        const date = new Date(enteredDate);
         const taskData = {
             title: enteredTitle,
             content: enteredContent,
-            date: new Date(enteredDate),
+            due: date.toDateString(),
             id: Math.random().toString()
         }
         props.onAddTask(taskData);
